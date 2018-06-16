@@ -1,0 +1,33 @@
+{% extends 'first/base.html' %}
+    {% load static %}
+
+    {% block front_page %}
+        <div class="logo">
+            <img src="{% static 'first/img/logo.png' %}" width="60" height="60" alt="logo">
+        </div>
+    {% endblock %}
+
+    {% block product %}
+
+        <style type = "text/css">
+            #prod
+            {
+                background: #407DE1;
+                color: white;
+                padding: 10px 20px;
+                font-family: sans-serif;
+                font-weight: 900;
+                font-size: 30px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        </style>
+
+        <p id = "prod">Featured Products</p>
+
+        {% for product in mobile %}
+            <p>{{ product.manufacturer }} {{ product.model_name }}</p>
+        {% endfor %}
+    {% endblock %}
+
+

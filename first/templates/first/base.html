@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <title>Online store</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/1.7.22/css/materialdesignicons.min.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'first/css/style.css' %}">
+
+</head>
+
+<body>
+
+    <!-- http://www.tyler.com/online-store/ -->
+    <!-- header with search & dropdown -->
+    <main class="main">
+        <header class="header">
+            <div class="wrapper-block">
+               {% block front_page %}
+               {% endblock %}
+
+                <nav class="nav">
+
+                    <ul style="margin-left: 700px">
+                        <li>
+                            <a href="javascript:;">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="javascript:;">Shop</a>
+                        </li>
+
+                        <li>  
+                            <a href="javascript:;">About Us</a>
+                        </li>
+
+                        <li>  
+                            <a href="javascript:;" class="drop">
+                                Contact
+                                <i class="mdi mdi-chevron-down mdi-18px"></i>
+                            </a>
+
+                            <ul class="sub">
+                                <li>
+                                    <a href="javascript:;">Sub 1</a>
+                                </li>
+
+                                <li>
+                                    <a href="javascript:;">Sub 2</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:;">Cart</a>
+                        </li>
+
+                        <li>
+                            <a href="javascript:;" class="search">
+                                <i class="mdi mdi-magnify mdi-18px"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="search-bar">
+            <div class="wrapper-block">
+                <input type="text" placeholder="Search..."/>
+            </div>
+        </div>
+
+        <div class="banner">
+            <img src="{% static 'first/img/backgroun.jpg' %}" alt="img-banner">
+
+            <div class="banner-wrapper">
+                Amazing Electronics
+            </div>
+        </div>
+
+        <div class="overflow-block">
+            <a href="javascript:;" class="close"><i class="mdi mdi-close-circle mdi-24px"></i></a>
+
+            <div class="overflow-block_wrapper">
+                <p>
+                    desperados
+                </p>
+            </div>
+        </div>
+
+
+    </main>
+
+    {% block product %}
+    {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <script  src="{% static 'first/js/index.js' %}"></script>
+</body>
+
+</html>
