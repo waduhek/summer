@@ -1,14 +1,57 @@
 from django.db import models
 
 class Mobile(models.Model):
-	manufacturer = models.TextField(blank = True, max_length = 60)
-	model_name = models.TextField(blank = True, max_length = 100)
+    Manufacturer = models.CharField(max_length = 60)
+    Model_Name = models.CharField(max_length = 100)
 
-	#Specifications
-	display_size = models.FloatField()
-	cpu = models.TextField(blank = True, max_length = 100)
-	ram = models.DecimalField(max_digits = 3, decimal_places = 0)
-	gpu = models.TextField(blank = True, max_length = 100)
+    #image
+    Image = models.ImageField(default = None)
 
-	def __str__(self):
-		return 'Mobile: {}'.format(self.model_name)
+    #Specifications
+    Display_Size = models.FloatField()
+    CPU = models.CharField(max_length = 100)
+    RAM = models.DecimalField(max_digits = 3, decimal_places = 0)
+    GPU = models.CharField(max_length = 100)
+    Front_Camera = models.DecimalField(max_digits = 3, decimal_places = 1)
+    Rear_Camera = models.DecimalField(max_digits = 3, decimal_places = 1)
+    Weight = models.DecimalField(max_digits = 4, decimal_places = 2)
+    Resolution = models.CharField(max_length = 40)
+    Battery_Rating = models.DecimalField(max_digits = 5, decimal_places = 0)
+    Colour = models.CharField(max_length = 50)
+    SKU = models.CharField(max_length = 40)
+    OS = models.CharField(max_length = 40)
+    Storage = models.CharField(max_length = 40)
+
+    Price = models.DecimalField(max_digits = 7, decimal_places = 2)
+
+
+    def __str__(self):
+    	return 'Mobile: {} {}'.format(self.Manufacturer, self.Model_Name)
+
+class Laptop(models.Model):
+    Manufacturer = models.CharField(max_length = 60)
+    Model_Name = models.CharField(max_length = 100)
+
+    #image
+    Image = models.ImageField(default = None)
+
+    #Specifications
+    Screen_Size = models.FloatField()
+    CPU = models.CharField(max_length = 100)
+    RAM = models.DecimalField(max_digits = 3, decimal_places = 0)
+    GPU = models.CharField(max_length = 100)
+    Camera = models.CharField(max_length = 40)
+    IO = models.TextField(max_length = 480)
+    Storage = models.CharField(max_length = 100)
+    OS = models.CharField(max_length = 40)
+    Battery_Rating = models.DecimalField(max_digits = 3, decimal_places = 2)
+    RAM_Type = models.CharField(max_length = 30)
+    VRAM = models.DecimalField(max_digits = 3, decimal_places = 1)
+    Internet_Connectivity = models.TextField(max_length = 140)
+
+
+    Price = models.DecimalField(max_digits = 7, decimal_places = 2)
+
+
+    def __str__(self):
+        return 'Laptop: {} {}'.format(self.Manufacturer, self.Model_Name)
