@@ -16,28 +16,26 @@
 </head>
 
 <body>
-
-    <!-- http://www.tyler.com/online-store/ -->
-    <!-- header with search & dropdown -->
     <main class="main">
         <header class="header">
             <div class="wrapper-block">
-               {% block front_page %}
-               {% endblock %}
+               <div class="logo">
+                    <a href="{% url 'index' %}"><img src="{% static 'first/img/logo.png' %}" width="60" height="60" alt="logo"></a>
+                </div>
 
                 <nav class="nav">
 
                     <ul style="margin-left: 700px">
                         <li>
-                            <a href="javascript:;">Home</a>
+                            <a href="{% url 'index' %}">Home</a>
                         </li>
 
                         <li>
-                            <a href="javascript:;">Shop</a>
+                            <a href="#">Shop</a>
                         </li>
 
                         <li>  
-                            <a href="javascript:;">About Us</a>
+                            <a href="{% url 'about-us' %}">About Us</a>
                         </li>
 
                         <li>  
@@ -48,11 +46,11 @@
 
                             <ul class="sub">
                                 <li>
-                                    <a href="javascript:;">Sub 1</a>
+                                    <a href="javascript:;">support@legitweb.com</a>
                                 </li>
 
                                 <li>
-                                    <a href="javascript:;">Sub 2</a>
+                                    <a href="javascript:;">Call: 1-800-LEGIT</a>
                                 </li>
                             </ul>
                         </li>
@@ -78,28 +76,12 @@
             </div>
         </div>
 
-        <div class="banner">
-            <img src="{% static 'first/img/backgroun.jpg' %}" alt="img-banner">
-
-            <div class="banner-wrapper">
-                Amazing Electronics
-            </div>
-        </div>
-
-        <div class="overflow-block">
-            <a href="javascript:;" class="close"><i class="mdi mdi-close-circle mdi-24px"></i></a>
-
-            <div class="overflow-block_wrapper">
-                <p>
-                    desperados
-                </p>
-            </div>
-        </div>
-
+        {% block front_page %}
+        {% endblock %}
 
     </main>
 
-    {% block product %}
+    {% block content %}
     {% endblock %}
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

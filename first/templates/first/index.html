@@ -2,12 +2,16 @@
     {% load static %}
 
     {% block front_page %}
-        <div class="logo">
-            <img src="{% static 'first/img/logo.png' %}" width="60" height="60" alt="logo">
+        <div class="banner">
+            <img src="{% static 'first/img/backgroun.jpg' %}" alt="img-banner">
+
+            <div class="banner-wrapper">
+                Amazing Electronics
+            </div>
         </div>
     {% endblock %}
 
-    {% block product %}
+    {% block content %}
 
         <style type = "text/css">
             #prod
@@ -25,9 +29,6 @@
 
         <p id = "prod">Featured Products</p>
 
-        {% for product in mobile %}
-            <p>{{ product.manufacturer }} {{ product.model_name }}</p>
-        {% endfor %}
     {% endblock %}
 
 
