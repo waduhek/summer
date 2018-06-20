@@ -19,3 +19,6 @@ def index(request):
 
 def about(request):
     return render(request, 'first/about-us.html')
+
+def product(request):
+    return render(request, 'first/product-page.html')

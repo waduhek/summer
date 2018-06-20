@@ -3,6 +3,7 @@ from django.db import models
 class Mobile(models.Model):
     Manufacturer = models.CharField(max_length = 60)
     Model_Name = models.CharField(max_length = 100)
+    Model_Number = models.CharField(max_length = 50)
 
     #image
     Image = models.ImageField(default = None)
@@ -18,7 +19,6 @@ class Mobile(models.Model):
     Resolution = models.CharField(max_length = 40)
     Battery_Rating = models.DecimalField(max_digits = 5, decimal_places = 0)
     Colour = models.CharField(max_length = 50)
-    SKU = models.CharField(max_length = 40)
     OS = models.CharField(max_length = 40)
     Storage = models.CharField(max_length = 40)
 
@@ -34,6 +34,7 @@ class Mobile(models.Model):
 class Laptop(models.Model):
     Manufacturer = models.CharField(max_length = 60)
     Model_Name = models.CharField(max_length = 100)
+    Model_Number = models.CharField(max_length = 50)
 
     #image
     Image = models.ImageField(default = None)
@@ -64,6 +65,7 @@ class Laptop(models.Model):
 class Tablet(models.Model):
     Manufacturer = models.CharField(max_length = 60)
     Model_Name = models.CharField(max_length = 100)
+    Model_Number = models.CharField(max_length = 50)
 
     #image
     Image = models.ImageField(default = None)
@@ -96,6 +98,7 @@ class Tablet(models.Model):
 class Headset(models.Model):
     Manufacturer = models.CharField(max_length = 60)
     Model_Name = models.CharField(max_length = 100)
+    Model_Number = models.CharField(max_length = 50)
 
     #Image
     Image = models.ImageField(default = None)

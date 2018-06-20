@@ -18,6 +18,6 @@ from django.conf.urls import include
 from django.urls import re_path
 
 urlpatterns = [
-    re_path('^admin/$', admin.site.urls),
-    re_path('^', include('first.urls')),
+    re_path(r'^admin/', admin.site.urls),
+    re_path(r'^', include('first.urls')),
 ]
