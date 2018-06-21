@@ -128,7 +128,7 @@ class PowerBank(models.Model):
     Model_Number = models.CharField(max_length = 50)
 
     #Image
-    Image = models.ImageField(default=none)
+    Image = models.ImageField(default = None)
 
     #Specifications
     Capacity = models.CharField(max_length = 50)
@@ -155,7 +155,7 @@ class MemoryCard(models.Model):
     Model_Number = models.CharField(max_length = 50)
 
     #Image
-    Image = models.ImageField(default = none)
+    Image = models.ImageField(default = None)
 
     #Specifications
     Capacity = models.DecimalField(max_digits = 3, decimal_places = 0)
