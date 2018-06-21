@@ -26,10 +26,11 @@ class Mobile(models.Model):
     Warranty_Type = models.CharField(max_length = 50)
     Warranty_Duration = models.CharField(max_length = 70)
 
+    Description = models.TextField(max_length = 240)
     Price = models.DecimalField(max_digits = 7, decimal_places = 2)
 
     def __str__(self):
-    	return 'Mobile: {} {}'.format(self.Manufacturer, self.Model_Name)
+        return 'Mobile: {} {}'.format(self.Manufacturer, self.Model_Name)
 
 class Laptop(models.Model):
     Manufacturer = models.CharField(max_length = 60)
@@ -57,6 +58,7 @@ class Laptop(models.Model):
     Warranty_Type = models.CharField(max_length = 50)
     Warranty_Duration = models.CharField(max_length = 70)
 
+    Description = models.TextField(max_length = 240)
     Price = models.DecimalField(max_digits = 7, decimal_places = 2)
 
     def __str__(self):
@@ -89,6 +91,7 @@ class Tablet(models.Model):
     Warranty_Type = models.CharField(max_length = 50)
     Warranty_Duration = models.CharField(max_length = 70)
 
+    Description = models.TextField(max_length = 240)
     Price = models.DecimalField(max_digits = 7, decimal_places = 2)
 
 
@@ -113,7 +116,44 @@ class Headset(models.Model):
     Warranty_Type = models.CharField(max_length = 50)
     Warranty_Duration = models.CharField(max_length = 70)
 
+    Description = models.TextField(max_length = 240)
     Price = models.DecimalField(max_digits = 7, decimal_places = 2)
 
     def __str__(self):
         return 'Headset: {} {}'.format(self.Manufacturer, self.Model_Name)
+
+class PowerBank(models.Model):
+    Manufacturer = models.CharField(max_length = 60)
+    Model_Name = models.CharField(max_length = 100)
+    Model_Number = models.CharField(max_length = 50)
+
+    #Image
+    Image = models.ImageField(default=none)
+
+    #Specifications
+    Capacity = models.CharField(max_length = 50)
+    Input_Power = models.CharField(max_length = 50)
+    Output_Power = models.CharField(max_length = 50)
+    Output_ports = models.DecimalField(max_digits = 2, decimal_places = 0)
+    Weight = models.DecimalField(max_digits = 3, decimal_places = 2)
+    Dimension = models.CharField(max_length = 60)
+    Colour = models.CharField(max_length = 50)
+
+    #Warranty
+    Warranty_Type = models.CharField(max_length = 50)
+    Warranty_Duration = models.CharField(max_length = 70)
+
+    Description = models.TextField(max_length = 240)
+    Price = models.DecimalField(max_digits = 7, decimal_places = 2)
+
+    def __str__(self):
+        return 'PowerBank: {} {}'.format(self.Manufacturer, self.Model_Name)
+
+
+
+
+
+
+
+
+        
