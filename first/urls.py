@@ -1,8 +1,12 @@
 from django.urls import re_path
+from django.views.generic import ListView, DetailView
+
 from . import views
+from . import models
 
 urlpatterns = [
     re_path(r'^$', views.index, name = 'index'),
-    re_path(r'^about-us/', views.about, name = 'about-us'),
-    re_path(r'^product/', views.product)
+    re_path(r'^about-us/$', views.about, name = 'about-us'),
+    re_path(r'^product/laptops/$', ListView.as_view(queryset = models.Laptop.objects.all(), template_name = "first/product-card.html")),
+    re_path(r'^product/laptops/(?P<pk>\d+)/$', DetailView.as_view(model = models.Laptop, template_name = "first/product-page.html")),
 ]

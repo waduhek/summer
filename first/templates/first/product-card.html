@@ -1,8 +1,19 @@
-<div class="card" style="width: 18rem; display: inline-flex;">
-    <img class="card-img-top" src="{{% product.Image %}}" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">{{% product.Model_Name %}}</h5>
-        <p class="card-text">??</p>
-        <a href="{{% url  %}}" class="btn btn-primary">View</a>
-    </div>
-</div>
+{% extends 'first/base.html' %}
+
+    {% block nav-shop %}
+        <li class = "nav-item active">
+            <a class = "nav-link" href = "#">Shop</a>
+        </li>
+    {% endblock %}
+
+    {% block content %}
+        {% for product in object_list %}
+            <div class = "card" style = "width: 18rem; display: inline-flex;">
+                <img class = "card-img-top" src = "{{ product.Image }}" alt = "Card image cap">
+                <div class = "card-body">
+                    <h5 class = "card-title">{{ product.Model_Name }}</h5>
+                    <a href = "/product/laptops/{{ product.id }}" class = "btn btn-primary">View</a>
+                </div>
+            </div>
+        {% endfor %}
+    {% endblock %}

@@ -16,70 +16,55 @@
 </head>
 
 <body>
-    <main class="main">
-        <header class="header">
-            <div class="wrapper-block">
-               <div class="logo">
-                    <a href="{% url 'index' %}"><img src="{% static 'first/img/logo.png' %}" width="60" height="60" alt="logo"></a>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-xl-4">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src = "{% static 'first/img/logo.png' %}" width = "50" height = "30" alt = "logo">
+        </a>
 
-                <nav class="nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                    <ul style="margin-left: 700px">
-                        <li>
-                            <a href="{% url 'index' %}">Home</a>
-                        </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                {% block nav-home %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                {% endblock %}
 
-                        <li>
-                            <a href="#">Shop</a>
-                        </li>
+                {% block nav-shop %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                {% endblock %}
 
-                        <li>  
-                            <a href="{% url 'about-us' %}">About Us</a>
-                        </li>
+                {% block nav-about %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about-us' %}">About Us</a>
+                    </li>
+                {% endblock %}
 
-                        <li>  
-                            <a href="javascript:;" class="drop">
-                                Contact
-                                <i class="mdi mdi-chevron-down mdi-18px"></i>
-                            </a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Contact
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">support@legitweb.com</a>
+                        <a class="dropdown-item" href="#">Call: 1-800-SCAMMED</a>
+                    </div>
+                </li>
+            </ul>
 
-                            <ul class="sub">
-                                <li>
-                                    <a href="javascript:;">support@legitweb.com</a>
-                                </li>
-
-                                <li>
-                                    <a href="javascript:;">Call: 1-800-LEGIT</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="javascript:;">Cart</a>
-                        </li>
-
-                        <li>
-                            <a href="javascript:;" class="search">
-                                <i class="mdi mdi-magnify mdi-18px"></i>
-                            </a>
-                        </li>
-
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
-        <div class="search-bar">
-            <div class="wrapper-block">
-                <input type="text" placeholder="Search..."/>
+            <div class = "navbar-nav nav-item text-inline">
+                {% block nav-login %}<a class = "nav-link" href = "#">Login<span class = "glyphicon glyphicon-log-in"></span></a>{% endblock %}
+                {% block nav-cart %}<a class = "nav-link" href = "#">Cart</a>{% endblock %}
             </div>
         </div>
+    </nav>
 
-        {% block front_page %}
-        {% endblock %}
-
-    </main>
+    {% block front_page %}
+    {% endblock %}
 
     {% block content %}
     {% endblock %}
