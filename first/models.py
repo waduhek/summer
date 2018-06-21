@@ -15,7 +15,7 @@ class Mobile(models.Model):
     GPU = models.CharField(max_length = 100)
     Front_Camera = models.DecimalField(max_digits = 3, decimal_places = 1)
     Rear_Camera = models.DecimalField(max_digits = 3, decimal_places = 1)
-    Weight = models.DecimalField(max_digits = 4, decimal_places = 2)
+    Weight = models.DecimalField(max_digits = 6, decimal_places = 2)
     Resolution = models.CharField(max_length = 40)
     Battery_Rating = models.DecimalField(max_digits = 5, decimal_places = 0)
     Colour = models.CharField(max_length = 50)
@@ -26,7 +26,7 @@ class Mobile(models.Model):
     Warranty_Type = models.CharField(max_length = 50)
     Warranty_Duration = models.CharField(max_length = 70)
 
-    Description = models.TextField(max_length = 240)
+    Description = models.TextField(max_length = 1000)
     Price = models.DecimalField(max_digits = 7, decimal_places = 2)
 
     def __str__(self):
@@ -49,7 +49,7 @@ class Laptop(models.Model):
     IO = models.TextField(max_length = 480)
     Storage = models.CharField(max_length = 100)
     OS = models.CharField(max_length = 40)
-    Battery_Rating = models.DecimalField(max_digits = 3, decimal_places = 2)
+    Battery_Rating = models.DecimalField(max_digits = 5, decimal_places = 0)
     RAM_Type = models.CharField(max_length = 30)
     VRAM = models.DecimalField(max_digits = 3, decimal_places = 1)
     Internet_Connectivity = models.TextField(max_length = 140)
@@ -58,7 +58,7 @@ class Laptop(models.Model):
     Warranty_Type = models.CharField(max_length = 50)
     Warranty_Duration = models.CharField(max_length = 70)
 
-    Description = models.TextField(max_length = 240)
+    Description = models.TextField(max_length = 1000)
     Price = models.DecimalField(max_digits = 7, decimal_places = 2)
 
     def __str__(self):
@@ -79,7 +79,7 @@ class Tablet(models.Model):
     GPU = models.CharField(max_length = 100)
     Front_Camera = models.DecimalField(max_digits = 3, decimal_places = 1)
     Rear_Camera = models.DecimalField(max_digits = 3, decimal_places = 1)
-    Weight = models.DecimalField(max_digits = 4, decimal_places = 2)
+    Weight = models.DecimalField(max_digits = 6, decimal_places = 2)
     Resolution = models.CharField(max_length = 40)
     Battery_Rating = models.DecimalField(max_digits = 5, decimal_places = 0)
     Colour = models.CharField(max_length = 50)
@@ -91,7 +91,7 @@ class Tablet(models.Model):
     Warranty_Type = models.CharField(max_length = 50)
     Warranty_Duration = models.CharField(max_length = 70)
 
-    Description = models.TextField(max_length = 240)
+    Description = models.TextField(max_length = 1000)
     Price = models.DecimalField(max_digits = 7, decimal_places = 2)
 
 
@@ -116,7 +116,7 @@ class Headset(models.Model):
     Warranty_Type = models.CharField(max_length = 50)
     Warranty_Duration = models.CharField(max_length = 70)
 
-    Description = models.TextField(max_length = 240)
+    Description = models.TextField(max_length = 1000)
     Price = models.DecimalField(max_digits = 7, decimal_places = 2)
 
     def __str__(self):
@@ -135,7 +135,7 @@ class PowerBank(models.Model):
     Input_Power = models.CharField(max_length = 50)
     Output_Power = models.CharField(max_length = 50)
     Output_ports = models.DecimalField(max_digits = 2, decimal_places = 0)
-    Weight = models.DecimalField(max_digits = 3, decimal_places = 2)
+    Weight = models.DecimalField(max_digits = 6, decimal_places = 2)
     Dimension = models.CharField(max_length = 60)
     Colour = models.CharField(max_length = 50)
 
@@ -143,7 +143,7 @@ class PowerBank(models.Model):
     Warranty_Type = models.CharField(max_length = 50)
     Warranty_Duration = models.CharField(max_length = 70)
 
-    Description = models.TextField(max_length = 240)
+    Description = models.TextField(max_length = 1000)
     Price = models.DecimalField(max_digits = 7, decimal_places = 2)
 
     def __str__(self):
@@ -161,14 +161,14 @@ class MemoryCard(models.Model):
     Capacity = models.DecimalField(max_digits = 3, decimal_places = 0)
     Write_Speed = models.DecimalField(max_digits = 3, decimal_places = 0)
     Dimension = models.CharField(max_length = 60)
-    Weight = models.DecimalField(max_digits = 3, decimal_places = 2)
+    Weight = models.DecimalField(max_digits = 6, decimal_places = 2)
     Colour = models.CharField(max_length = 50)
 
     #Warranty
     Warranty_Type = models.CharField(max_length = 50)
     Warranty_Duration = models.CharField(max_length = 70)
 
-    Description = models.TextField(max_length = 240)
+    Description = models.TextField(max_length = 1000)
     Price = models.DecimalField(max_digits = 7, decimal_places = 2)
 
     def __str__(self):
@@ -188,14 +188,14 @@ class Charger(models.Model):
     Power_Output = models.DecimalField(max_digits = 3 , decimal_places = 0)
 
     #Specification
-    Cable_Length = models.DecimalField(max_digits = 3 , decimal_places = 2)
+    Cable_Length = models.DecimalField(max_digits = 6 , decimal_places = 2)
     Cable_Type = models.CharField(max_length = 50)
 
     #Warranty
     Warranty_Type = models.CharField(max_length = 50)
     Warranty_Duration = models.CharField(max_length = 70)
 
-    Description = models.TextField(max_length = 240)
+    Description = models.TextField(max_length = 1000)
     Price = models.DecimalField(max_digits = 7, decimal_places = 2)
 
     def __str__(self):
