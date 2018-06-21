@@ -9,6 +9,8 @@ def index(request):
     headset = models.Headset.objects.all()
     memorycard = models.MemoryCard.objects.all()
     powerbank = models.PowerBank.objects.all()
+    charger = models.Charger.objects.all()
+
 
     args = {
         'mobile': mobile,
@@ -16,7 +18,8 @@ def index(request):
         'tablet': tablet,
         'headset': headset,
         'memorycard': memorycard,
-        'powerbank': powerbank
+        'powerbank': powerbank,
+        'charger': charger
     }
 
     return render(request, 'first/index.html', args)

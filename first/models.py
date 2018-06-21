@@ -175,6 +175,34 @@ class MemoryCard(models.Model):
         return 'MemoryCard: {} {}'.format(self.Manufacturer, self.Model_Name)
         
 
+class Charger(models.Model):
+    Manufacturer = models.CharField(max_length = 60)
+    Model_Name = models.CharField(max_length = 100)
+    Model_Number = models.CharField(max_length = 50)
+
+    #Image
+    Image = models.ImageField(default = None)
+
+    #PowerFeatures
+    Power_Input = models.CharField(max_length = 60)
+    Power_Output = models.DecimalField(max_digits = 3 , decimal_places = 0)
+
+    #Specification
+    Cable_Length = models.DecimalField(max_digits = 3 , decimal_places = 2)
+    Cable_Type = models.CharField(max_length = 50)
+
+    #Warranty
+    Warranty_Type = models.CharField(max_length = 50)
+    Warranty_Duration = models.CharField(max_length = 70)
+
+    Description = models.TextField(max_length = 240)
+    Price = models.DecimalField(max_digits = 7, decimal_places = 2)
+
+    def __str__(self):
+        return 'Charger: {} {}'.format(self.Manufacturer, self.Model_Name)
+
+
+
 
 
 
