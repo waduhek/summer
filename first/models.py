@@ -149,6 +149,32 @@ class PowerBank(models.Model):
     def __str__(self):
         return 'PowerBank: {} {}'.format(self.Manufacturer, self.Model_Name)
 
+class MemoryCard(models.Model):
+    Manufacturer = models.CharField(max_length = 60)
+    Model_Name = models.CharField(max_length = 100)
+    Model_Number = models.CharField(max_length = 50)
+
+    #Image
+    Image = models.ImageField(default = none)
+
+    #Specifications
+    Capacity = models.DecimalField(max_digits = 3, decimal_places = 0)
+    Write_Speed = models.DecimalField(max_digits = 3, decimal_places = 0)
+    Dimension = models.CharField(max_length = 60)
+    Weight = models.DecimalField(max_digits = 3, decimal_places = 2)
+    Colour = models.CharField(max_length = 50)
+
+    #Warranty
+    Warranty_Type = models.CharField(max_length = 50)
+    Warranty_Duration = models.CharField(max_length = 70)
+
+    Description = models.TextField(max_length = 240)
+    Price = models.DecimalField(max_digits = 7, decimal_places = 2)
+
+    def __str__(self):
+        return 'MemoryCard: {} {}'.format(self.Manufacturer, self.Model_Name)
+        
+
 
 
 
