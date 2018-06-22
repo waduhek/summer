@@ -1,0 +1,145 @@
+{% extends 'first/base.html' %}
+    {% load static %}
+
+    {% block nav-shop %}
+        <li class = "nav-item active">
+            <a class = "nav-link" href = "#">Shop</a>
+        </li>
+    {% endblock %}
+
+    {% block content %}
+        <div class = "container-fluid mt-xl-4">
+            <div class = "row pb-xl-4">
+                <div class = "col-xl-6">
+                    <img class = "image-fluid " src = "{{ laptop.Image.url }}">
+                </div>
+
+                <div class = "col-lg-6">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h1>{{laptop.Manufacturer}} {{ laptop.Model_Name }}</h1>
+                        </div>
+                    </div>
+
+                    <div class = "row pb-xl-4 border-bottom">
+                        <div class = "col-md-12">
+                            <span class = "badge badge-primary rounded-0 text-uppercase">Laptops</span>
+                        </div>
+                    </div>
+
+                    <div class = "row pt-xl-4 border-bottom">
+                        <div class = "col-md-12">
+                            <div class = "description">
+                                <p>{{ laptop.Description }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "row pt-xl-4 pb-xl-4 border-bottom">
+                        <div class = "col-md-4">
+                            <h3 class = "text-success">&#36; {{ laptop.Price }}</h3>
+                        </div>
+
+                        <div class = "col-md-4">
+                            <button type = "button" class = "btn btn-outline-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "container p-xl-3 text-center rounded" style = "background-color: #407DE1; color: white">
+            <span>Specifications</span>
+        </div>
+
+        <div class = "container-fluid mt-xl-4">
+            <table class = "table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope = 'row'>Manufacturer</th>
+                        <td>{{ laptop.Manufacturer }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Model Name</th>
+                        <td>{{ laptop.Model_Name }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Model Number</th>
+                        <td>{{ laptop.Model_Number }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Screen Size</th>
+                        <td>{{ laptop.Screen_Size }} inches</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>CPU</th>
+                        <td>{{ laptop.CPU }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>RAM</th>
+                        <td>{{ laptop.RAM }} GB</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>GPU</th>
+                        <td>{{ laptop.GPU }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Camera</th>
+                        <td>{{ laptop.Camera }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>IO</th>
+                        <td>{{ laptop.IO|linebreaks }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Storage</th>
+                        <td>{{ laptop.Storage }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>OS</th>
+                        <td>{{ laptop.OS }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Battery Rating</th>
+                        <td>{{ laptop.Battery_Rating }} Wh</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>RAM Type</th>
+                        <td>{{ laptop.RAM_Type }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>VRAM</th>
+                        <td>{{ laptop.VRAM }} GB</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Internet Connectivity</th>
+                        <td>{{ laptop.Internet_Connectivity|linebreaks }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Warranty Type</th>
+                        <td>{{ laptop.Warranty_Type }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Warranty Duration</th>
+                        <td>{{ laptop.Warranty_Duration }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    {% endblock %}
