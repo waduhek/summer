@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import include
 from django.urls import re_path
+from django.conf.urls.static import static 
+from summer2 import settings
 
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^', include('first.urls')),
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT )
