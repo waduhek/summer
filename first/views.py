@@ -29,6 +29,3 @@ def about(request):
 
 def product(request):
     return render(request, 'first/product-page.html')
-
-def login(request):
-    return render(request, 'first/login.html')

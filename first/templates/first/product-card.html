@@ -16,11 +16,11 @@
                 }
             </style>
             <div class = "card mx-xl-4" style = "width: 18rem; display: inline-flex;">
-                <img class = "card-img-top" src = "{{ product.Image.url }}" alt = "Card image cap" height = "300">
+                <img class = "card-img-top" src = "{{ product.Image.url }}" alt = "Card image cap">
                 <div class = "card-body">
                     <h5 class = "card-title">{{ product.Manufacturer }} {{ product.Model_Name }}</h5>
-                    {% block price %}{% endblock %}
-                    <a href = "/product/laptops/{{ product.id }}" class = "btn btn-primary">View</a>
+                    {% block price %}
+                    {% endblock %}
                 </div>
             </div>
         {% endfor %}

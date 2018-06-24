@@ -1,0 +1,145 @@
+{% extends 'first/base.html' %}
+    {% load static %}
+
+    {% block nav-shop %}
+        <li class = "nav-item active">
+            <a class = "nav-link" href = "#">Shop</a>
+        </li>
+    {% endblock %}
+
+    {% block content %}
+        <div class = "container mt-xl-4">
+            <div class = "row pb-xl-4">
+                <div class = "col-xl-6">
+                    <img src = "{{ mobile.Image.url }}">
+                </div>
+
+                <div class = "col-lg-6">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h1>{{mobile.Manufacturer}} {{ mobile.Model_Name }}</h1>
+                        </div>
+                    </div>
+
+                    <div class = "row pb-xl-4 border-bottom">
+                        <div class = "col-md-12">
+                            <span class = "badge badge-primary rounded-0 text-uppercase">Mobiles</span>
+                        </div>
+                    </div>
+
+                    <div class = "row pt-xl-4 border-bottom">
+                        <div class = "col-md-12">
+                            <div class = "description">
+                                <p>{{ mobile.Description }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "row pt-xl-4 pb-xl-4 border-bottom">
+                        <div class = "col-md-4">
+                            <h3 class = "text-success">&#x20B9; {{ mobile.Price }}</h3>
+                        </div>
+
+                        <div class = "col-md-4">
+                            <button type = "button" class = "btn btn-outline-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "container p-xl-3 text-center rounded" style = "background-color: #407DE1; color: white">
+            <span>Specifications</span>
+        </div>
+
+        <div class = "container-fluid mt-xl-4">
+            <table class = "table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope = 'row'>Manufacturer</th>
+                        <td>{{ mobile.Manufacturer }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Model Name</th>
+                        <td>{{ mobile.Model_Name }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Model Number</th>
+                        <td>{{ mobile.Model_Number }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Display Size</th>
+                        <td>{{ mobile.Display_Size }} inches</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>CPU</th>
+                        <td>{{ mobile.CPU }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>RAM</th>
+                        <td>{{ mobile.RAM }} GB</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>GPU</th>
+                        <td>{{ mobile.GPU }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Front Camera (Secondary)</th>
+                        <td>{{ mobile.Front_Camera }} MP</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Rear Camera (Primary)</th>
+                        <td>{{ mobile.Rear_Camera }} MP</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Weight</th>
+                        <td>{{ mobile.Weight }} grams</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Resolution</th>
+                        <td>{{ mobile.Resolution }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Battery Rating</th>
+                        <td>{{ mobile.Battery_Rating }} mAh</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Colour</th>
+                        <td>{{ mobile.Colour }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>OS</th>
+                        <td>{{ mobile.OS }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Storage</th>
+                        <td>{{ mobile.Storage }} GB</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Warranty Type</th>
+                        <td>{{ mobile.Warranty_Type }}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope = 'row'>Warranty Duration</th>
+                        <td>{{ mobile.Warranty_Duration }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    {% endblock %}
