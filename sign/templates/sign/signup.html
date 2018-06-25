@@ -1,6 +1,8 @@
 {% extends 'first/base.html' %}
     {% load static %}
 
+    {% block title %}<title>Register for an account</title>{% endblock %}
+
     {% block nav-login %}
         <a class = "nav-link active" href = "/login/">Login</a>
     {% endblock %}
@@ -9,7 +11,7 @@
         <div class = "container">
             <h2>Sign up</h2>
 
-            <form method = "post">
+            <form class = "form-group" method = "post">
                 {% csrf_token %}
                 {% for field in form %}
                     <p>
@@ -18,7 +20,9 @@
                         {{ field }}
 
                         {% if field.help_text %}
-                            <small style = "color: grey">{{ field.help_text|safe }}</small>
+                            <ul class = "list-group">
+                                <li class = "list-group-item"><small style = "color: grey">{{ field.help_text|safe }}</small></li>
+                            </ul>
                         {% endif %}
 
                         {% for error in field.errors %}

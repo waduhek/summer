@@ -1,0 +1,38 @@
+{% extends 'first/base.html' %}
+    {% load static %}
+
+    {% block title %}<title>Login</title>{% endblock %}
+
+    {% block nav-login %}
+        <a class = "nav-link active" href = "#">Login</a>
+    {% endblock %}
+    
+    {% block content %}
+        <div class = "container">
+            <h2>Login</h2>
+
+            <form method = "post">
+                {% csrf_token %}
+
+                {% if messages %}
+                    <ul class = "messages">
+                        {% for message in messages %}
+                            <li class = "{{ message.tags }} text-danger">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
+                <div class = "form-group">
+                    {{ form.as_p }}
+                </div>
+
+                <button class = "btn btn-primary" type="submit">Sign up</button>
+            </form>
+
+            <br/>
+            <small class = "text-info">
+                Don't have an account? <a href = "/login/signup/" style = "text-decoration: none;">Click here</a> to sign up
+            </small>
+        </div>
+    {% endblock %}
+
