@@ -1,0 +1,6 @@
+{% extends 'first/product-card.html' %}
+
+{% block price %}
+	<p class = "card-text text-success">&#x20B9; {{ product.Price }}</p>
+	<a href = "/shop/tablets/{{ product.id }}" class = "btn btn-primary">View</a>
+{% endblock %}

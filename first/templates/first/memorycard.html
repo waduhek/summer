@@ -1,0 +1,111 @@
+{% extends 'first/base.html' %}
+    {% load static %}
+
+    {% block nav-shop %}
+        <li class = "nav-item active">
+            <a class = "nav-link" href = "#">Shop</a>
+        </li>
+    {% endblock %}
+
+    {% block content %}
+        <div class = "container mt-xl-4">
+            <div class = "row pb-xl-4">
+                <div class = "col-xl-6">
+                    <img src = "{{ memorycard.Image.url }}" width = "70%">
+                </div>
+
+                <div class = "col-lg-6">
+                    <div class = "row">
+                        <div class = "col-md-12">
+                            <h1>{{ memorycard.Manufacturer }} {{ memorycard.Model_Name }}</h1>
+                        </div>
+                    </div>
+
+                    <div class = "row pb-xl-4 border-bottom">
+                        <div class = "col-md-12">
+                            <span class = "badge badge-primary rounded-0 text-uppercase">MemoryCards</span>
+                        </div>
+                    </div>
+
+                    <div class = "row pt-xl-4 border-bottom">
+                        <div class = "col-md-12">
+                            <div class = "description">
+                                <p>{{ memorycard.Description }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class = "row pt-xl-4 pb-xl-4 border-bottom">
+                        <div class = "col-md-4">
+                            <h3 class = "text-success">&#x20B9; {{ memorycard.Price }}</h3>
+                        </div>
+
+                        <div class = "col-md-4">
+                            <button type = "button" class = "btn btn-outline-primary">Add To Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    	<div class = "container p-xl-3 text-center rounded" style = "background-color: #407DE1; color: white">
+        	<span>Specifications</span>
+        </div>
+
+        <div class = "container mt-xl-4">
+        	<table class = "table table-striped">
+        		<tbody>
+        			
+        			<tr>
+        				<th scope = "row">Manufacturer</th>
+        				<td>{{ memorycard.Manufacturer }}</td>
+        			</tr>
+
+        			<tr>
+        				<th scope = "row">Model Name</th>
+        				<td>{{ memorycard.Model_Name }}</td>
+        			</tr>
+
+        			<tr>
+        				<th scope = "row">Model Number</th>
+        				<td>{{ memorycard.Model_Number }}</td>
+        			</tr>
+
+        			<tr>
+        				<th scope = "row">Capacity</th>
+        				<td>{{ memorycard.Capacity }} GB</td>
+        			</tr>
+
+        			<tr>
+        				<th scope = "row">Write Speed</th>
+        				<td>{{ memorycard.Write_Speed }}</td>
+        			</tr>
+
+        			<tr>
+        				<th scope = "row">Dimension</th>
+        				<td>{{ memorycard.Dimension }}</td>
+        			</tr>
+
+        			<tr>
+        				<th scope = "row">Weight</th>
+        				<td>{{ memorycard.Weight }}</td>
+        			</tr>
+
+        			<tr>
+        				<th scope = "row">Colour</th>
+        				<td>{{ memorycard.Colour }}</td>
+        			</tr>
+
+        			<tr>
+        				<th scope = "row">Warranty Type</th>
+        				<td>{{ memorycard.Warranty_Type }}</td>
+        			</tr>
+
+        			<tr>
+        				<th scope = "row">Warranty Duration</th>
+        				<td>{{ memorycard.Warranty_Duration }}</td>
+        			</tr>
+        		</tbody>
+        	</table>
+        </div>
+     {% endblock %}
