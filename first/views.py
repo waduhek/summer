@@ -29,3 +29,6 @@ def about(request):
 
 def product(request):
     return render(request, 'first/product-page.html')
+
+def category(request):
+    return render(request, 'first/product-category.html')

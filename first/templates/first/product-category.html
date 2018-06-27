@@ -1,0 +1,24 @@
+{% extends 'first/base.html' %}
+	{% load static %}
+	{% block title %}<title>Categories</title>{% endblock %}
+
+	{% block content %}
+
+		<style>
+			.cat{
+				margin-left: 50px;
+				margin-top: 10px;
+			}
+		</style>
+
+		<div class = "cat">
+			<a class = "btn btn-outline-primary btn-lg cat" role = "button" href = "/shop/categories/mobiles/">Mobiles</a>
+			<a class = "btn btn-outline-primary btn-lg cat" role = "button" href = "/shop/categories/laptops/">Laptops</a>
+			<a class = "btn btn-outline-primary btn-lg cat" role = "button" href = "/shop/categories/tablets/">Tablets</a>
+			<a class = "btn btn-outline-primary btn-lg cat" role = "button" href = "/shop/categories/headsets/">Headsets</a>
+			<a class = "btn btn-outline-primary btn-lg cat" role = "button" href = "/shop/categories/powerbanks/">Power Banks</a>
+			<a class = "btn btn-outline-primary btn-lg cat" role = "button" href = "/shop/categories/memorycards/">Memory Cards</a>
+			<a class = "btn btn-outline-primary btn-lg cat" role = "button" href = "/shop/categories/chargers/">Chargers</a>
+		</div>
+
+	{% endblock %}
