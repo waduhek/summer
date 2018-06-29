@@ -24,5 +24,9 @@ urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^', include('first.urls')),
     re_path(r'^login/', include('sign.urls')),
-] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT )
+    #re_path(r'^cart/', include('cart.urls')),
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT )
 
