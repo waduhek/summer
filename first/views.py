@@ -1,6 +1,7 @@
-from django.shortcuts import render
-
+from django.shortcuts import render,get_object_or_404
+from cart.forms import CartAddProductForm
 from . import models
+from first.models import Mobile
 
 def index(request):
     mobile = models.Mobile.objects.all()
@@ -32,3 +33,8 @@ def product(request):
 
 def category(request):
     return render(request, 'first/product-category.html')
+
+def product_detail(request , product_id):
+    product = get_object_or_404(Mobile , pk = product_id)
+    cart_product_form = CartAddProductForm()
+    return render(request ,'first/mobile.html' , {'product' : product , 'cart_product_form' : cart_product_form})

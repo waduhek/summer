@@ -23,6 +23,7 @@ from summer2 import settings
 urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^', include('first.urls')),
+    re_path(r'^cart/',include('cart.urls' , namespace='cart')),
     re_path(r'^login/', include('sign.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT )
 

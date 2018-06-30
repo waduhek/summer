@@ -2,5 +2,5 @@
 
 {% block price %}
     <p class = "card-text text-success">&#x20B9; {{ product.Price }}</p>
-    <a href = "/shop/categories/mobiles/{{ product.id }}" class = "btn btn-primary">View</a>
+    <a href = "{% url 'first:product_detail' product.id %}" class = "btn btn-primary">View</a>
 {% endblock %}

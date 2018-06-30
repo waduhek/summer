@@ -58,7 +58,7 @@ class SignUp(forms.Form):
 
 class Login(forms.Form):
     username = forms.CharField(label = "Username")
-    password = forms.CharField(label = "Password", widget = forms.PasswordInput)
+    password = forms.CharField(label = "Password " , widget = forms.PasswordInput)
 
     class Meta:
         model = User

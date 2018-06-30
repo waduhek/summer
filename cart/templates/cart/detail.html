@@ -1,0 +1,63 @@
+{% extends 'first/base.html' %}
+	{% load static %}
+
+	{% block title %}<title>Shopping Cart</title>{% endblock %}
+
+	{% block content %}
+		<div class = "text-right">
+  			{% with total_items=cart|length %}
+    			{% if cart|length > 0 %}
+      				<h2>Your cart: </h2>
+      				<a href="{% url 'cart:cart_detail' %}">
+        			<h2>{{ total_items }} item{{ total_items|pluralize }},
+        			&#x20B9;{{ cart.get_total_price }}</h2>
+      				</a>
+    			{% else %}
+     				 <h2>Your cart is empty</h2>
+    			{% endif %}
+  			{% endwith %}			
+		</div>
+		<h1>Your Shopping Cart</h1>
+		<table class = "table table-striped">
+			<thead>
+				<tr>
+					<td>Image</td>
+					<td>Product</td>
+					<td>Quantity</td>
+					<td>Remove</td>
+					<td>Unit Price</td>
+					<td>Price</td>
+				</tr>
+			</thead>
+			<tbody>
+				{% for item in cart %}
+					{% with product=item.product %}
+						<tr>
+							<td><img src = "{{ product.image.url }}"></td>
+							<td>{{ product.Model_Name }}</td>
+							<td>
+								<form action = "{% url 'cart:cart_add' product.id %}" method = "post">
+									{{ item.update_quantity_form.quantity }}
+									{{ item.update_quanity_form.update }}
+									<input type = "submit" value = "Update">
+									{% csrf_token %}
+								</form>
+							</td>
+							<td><a href = "{% url 'cart:cart_remove' product.id %}">Remove</a></td>
+							<td class = "num">&#x20B9;{{ item.price }}</td>
+							<td class = "num">&#x20B9;{{ item.total_price }}</td>
+						</tr>
+					{% endwith %}
+				{% endfor %}
+				<tr class = "total">
+					<td>Total</td>
+					<td colspan = "4"></td>
+					<td class = "num">&#x20B9;{{ cart.get_total_price }}</td>
+				</tr>
+			</tbody>						
+		</table>
+		<p class = "text-right">
+			<a href = "{% url 'first:category' %}" class = "button light btn-lg">Continue Shopping</a>
+			<a href = "#" class = "button btn-lg">Checkout</a>
+		</p>
+	{% endblock %}

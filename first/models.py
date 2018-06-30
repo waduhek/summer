@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Mobile(models.Model):
     Manufacturer = models.CharField(max_length = 60)
@@ -31,6 +32,10 @@ class Mobile(models.Model):
 
     def __str__(self):
         return 'Mobile: {} {}'.format(self.Manufacturer, self.Model_Name)
+
+    def get_absolute_url(self):
+        return reverse('first/mobile.html' , args = [self.id])
+
 
 class Laptop(models.Model):
     Manufacturer = models.CharField(max_length = 60)

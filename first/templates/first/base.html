@@ -17,7 +17,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-xl-4">
-        <a class="navbar-brand" href="{% url 'index' %}">
+        <a class="navbar-brand" href="{% url 'first:index' %}">
             <img src = "{% static 'first/img/logo.png' %}" width = "50" height = "30" alt = "logo">
         </a>
 
@@ -29,19 +29,19 @@
             <ul class="navbar-nav mr-auto">
                 {% block nav-home %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'first:index' %}">Home <span class="sr-only">(current)</span></a>
                     </li>
                 {% endblock %}
 
                 {% block nav-shop %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'category' %}">Shop</a>
+                        <a class="nav-link" href="{% url 'first:category' %}">Shop</a>
                     </li>
                 {% endblock %}
 
                 {% block nav-about %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about-us' %}">About Us</a>
+                        <a class="nav-link" href="{% url 'first:about-us' %}">About Us</a>
                     </li>
                 {% endblock %}
 
@@ -67,7 +67,7 @@
                 {% endblock %}
                 {% block nav-cart %}
                     {% if user.is_authenticated %}       
-                      <a class = "nav-link" href = "#">Cart</a>     
+                      <a class = "nav-link" href = "{% url 'cart:cart_detail' %}">Cart</a>     
                     {% else %}        
                        <a class = "nav-link disabled" style = "cursor: not-allowed;" data-toggle = "tooltip" data-placement = "left" title = "Sign in to use the cart">Cart</a>      
                     {% endif %}       

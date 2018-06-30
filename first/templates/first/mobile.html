@@ -3,7 +3,7 @@
 
     {% block nav-shop %}
         <li class = "nav-item active">
-            <a class = "nav-link" href = "{% url 'category' %}">Shop</a>
+            <a class = "nav-link" href = "{% url 'first:category' %}">Shop</a>
         </li>
     {% endblock %}
 
@@ -41,7 +41,11 @@
                         </div>
 
                         <div class = "col-md-4">
-                            <button type = "button" class = "btn btn-outline-primary">Add To Cart</button>
+                            <form action="{% url 'cart:cart_add' mobile.id %}" method="post">
+                                {{ cart_product_form }}
+                                {% csrf_token %}
+                                <input type = "submit" value = "Add to Cart" class = "btn btn-outline-primary">
+                            </form>
                         </div>
                     </div>
                 </div>
