@@ -4,7 +4,7 @@
 	{% block title %}<title>Shopping Cart</title>{% endblock %}
 
 	{% block content %}
-		<div class = "text-right">
+		<div class = "text-right pr-3 pr-md-3 pd-lg-3">
   			{% with total_items=cart|length %}
     			{% if cart|length > 0 %}
       				<h2>Your cart: </h2>
@@ -18,7 +18,7 @@
   			{% endwith %}			
 		</div>
 		<h1>Your Shopping Cart</h1>
-		<table class = "table table-striped">
+		<table class = "table table-striped" style = "font-size: 20px">
 			<thead>
 				<tr>
 					<td>Image</td>
@@ -31,21 +31,14 @@
 			</thead>
 			<tbody>
 				{% for item in cart %}
-					{% with product=item.product %}
+					{% with mobile=item.mobile %}
 						<tr>
-							<td><img src = "{{ product.image.url }}"></td>
-							<td>{{ product.Model_Name }}</td>
-							<td>
-								<form action = "{% url 'cart:cart_add' product.id %}" method = "post">
-									{{ item.update_quantity_form.quantity }}
-									{{ item.update_quanity_form.update }}
-									<input type = "submit" value = "Update">
-									{% csrf_token %}
-								</form>
-							</td>
-							<td><a href = "{% url 'cart:cart_remove' product.id %}">Remove</a></td>
-							<td class = "num">&#x20B9;{{ item.price }}</td>
-							<td class = "num">&#x20B9;{{ item.total_price }}</td>
+							<td><img src = "{{ mobile.Image.url }}" height="50%"></td>
+							<td>{{ mobile.Manufacturer }} {{ mobile.Model_Name }}</td>
+							<td>{{ item.quantity }}</td>
+							<td><a href = "{% url 'cart:cart_remove' mobile.id %}">Remove</a></td>
+							<td >&#x20B9;{{ item.price }}</td>
+							<td>&#x20B9;{{ item.total_price }}</td>
 						</tr>
 					{% endwith %}
 				{% endfor %}

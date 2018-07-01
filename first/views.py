@@ -34,7 +34,8 @@ def product(request):
 def category(request):
     return render(request, 'first/product-category.html')
 
-def product_detail(request , product_id):
-    product = get_object_or_404(Mobile , pk = product_id)
+def product_detail(request , pk):
+    mobile = get_object_or_404(Mobile , pk = pk)
     cart_product_form = CartAddProductForm()
-    return render(request ,'first/mobile.html' , {'product' : product , 'cart_product_form' : cart_product_form})
+    context = {'mobile' : mobile , 'cart_product_form' : cart_product_form}
+    return render(request ,'first/mobile.html' , context)

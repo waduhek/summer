@@ -41,10 +41,10 @@
                         </div>
 
                         <div class = "col-md-4">
-                            <form action="{% url 'cart:cart_add' mobile.id %}" method="post">
+                            <form action = "{% url 'cart:cart_add' mobile.id %}" method = "post">
                                 {{ cart_product_form }}
                                 {% csrf_token %}
-                                <input type = "submit" value = "Add to Cart" class = "btn btn-outline-primary">
+                                <input type = "submit" value = "Add to Cart" class = "btn btn-outline-primary {% if not request.user.is_authenticated %}disabled{% endif %}">
                             </form>
                         </div>
                     </div>
@@ -146,4 +146,11 @@
                 </tbody>
             </table>
         </div>
+
+        <script type="text/javascript">      
+            $(document).ready(function()      
+            {     
+                $('[data-toggle = "tooltip"]').tooltip();     
+            });       
+        </script>
     {% endblock %}

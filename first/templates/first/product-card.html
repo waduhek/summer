@@ -16,7 +16,7 @@
                 }
             </style>
             <div class = "card mx-xl-4" style = "width: 18rem; display: inline-flex;">
-                <img class = "card-img-top" src = "{{ product.Image.url }}" alt = "Card image cap">
+                <img class = "card-img-top" src = "{{ product.Image.url }}" alt = "Card image cap" style = "max-height: 580px" >
                 <div class = "card-body">
                     <h5 class = "card-title">{{ product.Manufacturer }} {{ product.Model_Name }}</h5>
                     {% block price %}
