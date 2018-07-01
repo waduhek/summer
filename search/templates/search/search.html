@@ -1,0 +1,29 @@
+{% extends 'first/base.html' %}
+	{% load static %}
+
+	{% block content %}
+
+		<div>
+			<p class = "text-center">You have seacrhed for : <strong>"{{ query }}"</strong>		
+		</div>
+		<div class="container">
+			<div class="row mx-auto">
+				{% for mobile in mobiles %}
+					<div class="col-9 col-sm-12 col-md-4 col-md-12 col-lg-4">
+						<div class="card text-center" style="min-width: 18rem;">
+							<a href="{{ mobile.get_absolute_url }}"><img class="card img-top" src = "{{ mobile.Image.url }}" alt="{{ mobile.Model_Name }}"></a>
+							<div class="card-body">
+								<h4>{{ mobile.Model_Name }}</h4>
+								<p>&#x20B9;{{ mobile.Price }}</p>
+							</div>
+						</div>
+					</div> 
+					{% empty %}
+						<div class="row mx-auto">
+							<p class="text-center">0 results found</p>
+						</div>
+				{% endfor %}
+			</div>
+		</div>
+	{% endblock %}
+	

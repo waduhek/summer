@@ -34,7 +34,7 @@ class Mobile(models.Model):
         return 'Mobile: {} {}'.format(self.Manufacturer, self.Model_Name)
 
     def get_absolute_url(self):
-        return reverse('first/mobile.html' , args = [self.id])
+        return reverse('first:detail' , args = [self.id])
 
 
 class Laptop(models.Model):

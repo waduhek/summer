@@ -25,5 +25,6 @@ urlpatterns = [
     re_path(r'^', include('first.urls' , namespace = 'first')),
     re_path(r'^cart/',include('cart.urls' , namespace='cart')),
     re_path(r'^login/', include('sign.urls')),
+    re_path(r'^search/', include('search.urls', namespace = 'search')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT )
 
